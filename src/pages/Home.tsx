@@ -138,7 +138,7 @@ export default function Home() {
 					}}
 					gutterBottom
 				>
-					A Trueco é uma companhia dedicada a conscientizar sobre o
+					A Trueco é um projeto dedicado a conscientizar sobre o
 					greenwashing, combatendo práticas enganosas de empresas que
 					alegam ser ecológicas sem ações reais. Através de campanhas
 					e informações, a Trueco ajuda consumidores e organizações a
