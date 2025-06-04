@@ -1,5 +1,5 @@
 import { Box, Paper, styled, Typography } from "@mui/material";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import SpaIcon from "@mui/icons-material/Spa";
 
 import { Link as RouterLink } from "react-router-dom";
@@ -8,7 +8,7 @@ const navLinks = [
 	{ label: "Home", to: "/" },
 	// { label: "Cartilha do Consumidor", to: "/cartilhadoconsumidor" },
 	{ label: "Quiz", to: "/quiz" },
-	{ label: "Educadores e Escola", to: "/educadoresescola"},
+	{ label: "Educadores e Escola", to: "/educadoresescola" },
 	{ label: "Dashboard", to: "/login" },
 ];
 

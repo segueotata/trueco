@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { login, register, logout } from "../services/auth";
+import { login, register } from "../services/auth";
 import { Button, TextField, Typography, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -49,15 +49,6 @@ export default function AuthForm() {
 			navigate("/dashboard");
 		} catch (error) {
 			alert("Erro no login");
-		}
-	};
-
-	const handleLogout = async () => {
-		try {
-			await logout();
-			alert("Logout realizado!");
-		} catch (error) {
-			alert("Erro no logout");
 		}
 	};
 

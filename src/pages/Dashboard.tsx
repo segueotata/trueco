@@ -8,7 +8,7 @@ import {
 	getDocs,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { Box, Typography, Button, Grid, Paper } from "@mui/material";
+import { Box, Typography, Button, Paper } from "@mui/material";
 import {
 	ResponsiveContainer,
 	BarChart,
@@ -21,8 +21,6 @@ import {
 	Pie,
 	Cell,
 } from "recharts";
-
-const COLORS = ["#4caf50", "#f44336"]; // Verde e Vermelho
 
 export default function Dashboard() {
 	const [username, setUsername] = useState("");
@@ -137,9 +135,9 @@ export default function Dashboard() {
 					variant="contained"
 					color="error"
 					onClick={handleLogout}
-          sx={{
-            mt: "2em"
-          }}
+					sx={{
+						mt: "2em",
+					}}
 				>
 					Sair
 				</Button>
@@ -250,7 +248,7 @@ export default function Dashboard() {
 				}}
 				elevation={0}
 			>
-				<Box >
+				<Box>
 					<Typography variant="h6" gutterBottom>
 						Gráficos de Pizza: Acertos e Erros por Pergunta
 					</Typography>
