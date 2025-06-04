@@ -6,8 +6,9 @@ import { Link as RouterLink } from "react-router-dom";
 
 const navLinks = [
 	{ label: "Home", to: "/" },
-	{ label: "Cartilha do Consumidor", to: "/cartilhadoconsumidor" },
+	// { label: "Cartilha do Consumidor", to: "/cartilhadoconsumidor" },
 	{ label: "Quiz", to: "/quiz" },
+	{ label: "Educadores e Escola", to: "/educadoresescola"},
 	{ label: "Dashboard", to: "/login" },
 ];
 
@@ -20,10 +21,12 @@ const StyledLink = styled(RouterLink)({
 	color: "black",
 	textDecoration: "none",
 	transition: "0.2s ease-in-out",
+	// fontWeight: "bolder",
+	letterSpacing: ".1em",
 	"&:hover": {
 		color: "green",
-		paddingLeft: "0.5em",
-		paddingRight: "0.5em",
+		paddingLeft: "0.2em",
+		paddingRight: "0.2em",
 	},
 });
 

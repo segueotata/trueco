@@ -26,6 +26,7 @@ const ParallaxSection: React.FC<ParallaxSectionProps> = ({
         justifyContent: "space-around",
         color: "white",
         textAlign: "center",
+        boxShadow: "inset 0 0 1em #333",
         p: 4,
       }}
     >

@@ -3,121 +3,120 @@ import { login, register, logout } from "../services/auth";
 import { Button, TextField, Typography, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-import { collection, query, getDocs, limit, addDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 export default function AuthForm() {
-  const [username, setUsername] = useState(""); // <- Aqui
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+	const [username, setUsername] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const navigate = useNavigate();
 
-  async function canRegisterNewUser() {
-    const usersRef = collection(db, "users");
-    const q = query(usersRef, limit(1));
-    const querySnapshot = await getDocs(q);
-    return querySnapshot.empty; // true se não tem usuário, false se já tem
-  }
+	async function canRegisterNewUser() {
+		const usersRef = collection(db, "users");
+		const querySnapshot = await getDocs(usersRef);
+		return querySnapshot.size < 3; // permite até 2, bloqueia no 3
+	}
 
-  const handleRegister = async () => {
-    try {
-      const canRegister = await canRegisterNewUser();
-      if (!canRegister) {
-        alert("Cadastro indisponível. Já existe um usuário registrado.");
-        return;
-      }
+	const handleRegister = async () => {
+		try {
+			const canRegister = await canRegisterNewUser();
+			if (!canRegister) {
+				alert("Cadastro indisponível.");
+				return;
+			}
 
-      // Registra no Firebase Auth
-      const userCredential = await register(email, password);
+			const userCredential = await register(email, password);
 
-      // Salva o usuário na coleção "users"
-      await addDoc(collection(db, "users"), {
-        uid: userCredential.user.uid,
-        username, // <- Aqui adicionamos o username!
-        email,
-        createdAt: new Date(),
-      });
+			await addDoc(collection(db, "users"), {
+				uid: userCredential.user.uid,
+				username,
+				email,
+				createdAt: new Date(),
+			});
 
-      alert("Cadastro realizado com sucesso!");
-    } catch (error) {
-      console.error(error);
-      alert("Erro no cadastro");
-    }
-  };
+			alert("Cadastro realizado com sucesso!");
+		} catch (error) {
+			console.error(error);
+			alert("Erro no cadastro");
+		}
+	};
 
-  const handleLogin = async () => {
-    try {
-      await login(email, password);
-      alert("Login realizado com sucesso!");
-      navigate("/dashboard");
-    } catch (error) {
-      alert("Erro no login");
-    }
-  };
+	const handleLogin = async () => {
+		try {
+			await login(email, password);
+			alert("Login realizado com sucesso!");
+			navigate("/dashboard");
+		} catch (error) {
+			alert("Erro no login");
+		}
+	};
 
-  const handleLogout = async () => {
-    try {
-      await logout();
-      alert("Logout realizado!");
-    } catch (error) {
-      alert("Erro no logout");
-    }
-  };
+	const handleLogout = async () => {
+		try {
+			await logout();
+			alert("Logout realizado!");
+		} catch (error) {
+			alert("Erro no logout");
+		}
+	};
 
-  return (
-    <Paper
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-        gap: 2,
-        width: { xs: "80%", md: "30em" },
-        margin: "auto",
-        my: "8em",
-        padding: "1em",
-      }}
-      elevation={4}
-    >
-      <Typography variant="h4">Faça login para acessar o Dashboard</Typography>
+	return (
+		<Paper
+			sx={{
+				display: "flex",
+				justifyContent: "center",
+				flexDirection: "column",
+				gap: 2,
+				width: { xs: "80%", md: "30em" },
+				margin: "auto",
+				my: { xs: "2em", md: "8em" },
+				padding: "1em",
+			}}
+			elevation={4}
+		>
+			<Typography
+				variant="h5"
+				sx={{
+					textAlign: "center",
+				}}
+			>
+				Faça login para acessar o Dashboard
+			</Typography>
 
-      {/* Campo de Nome de Usuário */}
+			<TextField
+				label="Nome de usuário"
+				value={username}
+				onChange={(e) => setUsername(e.target.value)}
+			/>
+			<Typography
+				sx={{
+					textAlign: "center",
+					fontSize: ".8em",
+					color: "#c0c0c0dd",
+				}}
+			>
+				O nome de usuário serve apenas para identificação e não é
+				necessário ao realizar login
+			</Typography>
 
-      <TextField
-        label="Nome de usuário"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <Typography
-        sx={{
-          textAlign: "center",
-          fontSize: ".8em",
-		  color: "#c0c0c0dd"
-        }}
-      >
-        O nome de usuário serve apenas para identificação e não é necessário ao realizar login
-      </Typography>
-
-      <TextField
-        label="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <TextField
-        label="Senha"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <Button variant="contained" onClick={handleLogin}>
-        Login
-      </Button>
-      <Button variant="outlined" onClick={handleRegister}>
-        Cadastrar
-      </Button>
-      {/* BOTÃO DE LOGOUT REMOVIDO DA PÁGINA DE LOGIN */}
-      {/* <Button color="error" onClick={handleLogout} disabled={true}>
-        Logout
-      </Button> */}
-    </Paper>
-  );
+			<TextField
+				label="Email"
+				value={email}
+				onChange={(e) => setEmail(e.target.value)}
+			/>
+			<TextField
+				label="Senha"
+				type="password"
+				value={password}
+				onChange={(e) => setPassword(e.target.value)}
+			/>
+			<Button variant="contained" onClick={handleLogin}>
+				Login
+			</Button>
+			<Button variant="outlined" onClick={handleRegister}>
+				Cadastrar
+			</Button>
+		</Paper>
+	);
 }

@@ -201,14 +201,14 @@ export default function QuizPage() {
 	}
 
 	return (
-		<Box sx={{ maxWidth: 700, margin: "auto", p: 2 }}>
-			<Typography variant="h4" mb={3}>
-				Quiz sobre Greenwashing
+		<Box sx={{ maxWidth: 700, margin: {xs: "0 1em", md: "auto"}, py: 4 }}>
+			<Typography variant="h4" gutterBottom textAlign="center">
+				Quiz sobre greenwashing:
 			</Typography>
 
 			{questions.map((q) => (
 				<Paper key={q.id} sx={{ mb: 3, padding: "1em" }} elevation={4}>
-					<Typography variant="h6">
+					<Typography variant="h5">
 						{q.id}. {q.question}
 					</Typography>
 					<RadioGroup
