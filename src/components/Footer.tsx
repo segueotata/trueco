@@ -5,37 +5,37 @@ const membros = [
 		nome: "Andreza K. Ruaro",
 		universidade: "Gran Faculdade",
 		curso: "Direito",
-		imagem: "src/assets/pics/andreza.jpg",
+		imagem: "public/assets/pics/andreza.jpg",
 	},
 	{
 		nome: "Braz Magri",
 		universidade: "Universidade Tuiuti do Paraná",
 		curso: "Desenvolvimento de Sistemas",
-		imagem: "src/assets/pics/braz.jpg",
+		imagem: "public/assets/pics/braz.jpg",
 	},
 	{
 		nome: "Hellen Ferreira",
 		universidade: "Gran Faculdade",
 		curso: "Direito",
-		imagem: "src/assets/pics/hellen.jpg",
+		imagem: "public/assets/pics/hellen.jpg",
 	},
 	{
 		nome: "Isadora Marchioro",
 		universidade: "Gran Faculdade",
 		curso: "Direito",
-		imagem: "src/assets/pics/isadora.jpg",
+		imagem: "public/assets/pics/isadora.jpg",
 	},
 	{
 		nome: "Janaina Wapenik",
 		universidade: "Gran Faculdade",
 		curso: "Direito",
-		imagem: "src/assets/pics/janaina.jpg",
+		imagem: "public/assets/pics/janaina.jpg",
 	},
 	{
 		nome: "Julya Vitória",
 		universidade: "Gran Faculdade",
 		curso: "Psicologia",
-		imagem: "src/assets/pics/julya.jpg",
+		imagem: "public/assets/pics/julya.jpg",
 	},
 ].sort((a, b) => a.nome.localeCompare(b.nome));
 

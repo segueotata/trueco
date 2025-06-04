@@ -2,14 +2,14 @@ import { Box, Button, Paper, Typography } from "@mui/material";
 import ParallaxSection from "../components/ParallaxSection";
 // import SectionImage from "../components/SectionImage";
 
-import truecoLogo from "../assets/trueco-logo.png";
+import truecoLogo from "../../public/assets/trueco-logo.png";
 import Informativos from "../components/Informativos";
 import Footer from "../components/Footer";
 
 export default function Home() {
 	return (
 		<>
-			<ParallaxSection image="./src/assets/bgs/1.jpg" height="30em">
+			<ParallaxSection image="public/assets/bgs/1.jpg" height="30em">
 				<Paper
 					elevation={4}
 					sx={{
@@ -170,7 +170,7 @@ export default function Home() {
 			</Paper>
 
 			{/* FOOTER DA PÁGINA PRINCIPAL */}
-			<ParallaxSection image="./src/assets/bgs/4.jpg" height="auto">
+			<ParallaxSection image="public/assets/bgs/4.jpg" height="auto">
 				<Footer></Footer>
 			</ParallaxSection>
 		</>

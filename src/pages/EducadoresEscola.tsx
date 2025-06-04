@@ -18,9 +18,14 @@ export default function EducadoresLayout() {
 				Área para Educadores e Escolas
 			</Typography>
 
-			<Typography variant="h5" textAlign="center" gutterBottom sx={{
-                display: {xs: "none", md: "block"}
-            }}>
+			<Typography
+				variant="h5"
+				textAlign="center"
+				gutterBottom
+				sx={{
+					display: { xs: "none", md: "block" },
+				}}
+			>
 				Um espaço criado especialmente para professores, escolas e
 				projetos educativos que desejam abordar o consumo consciente, o
 				marketing verde e o greenwashing em sala de aula.
@@ -96,7 +101,7 @@ export default function EducadoresLayout() {
 								<Button
 									variant="outlined"
 									component="a"
-									href="src/downloads/cartilha_consumidor_sustentavel.pdf"
+									href="public/downloads/cartilha_consumidor_sustentavel.pdf"
 									download
 									size="small"
 									sx={{
@@ -122,7 +127,7 @@ export default function EducadoresLayout() {
 								<Button
 									variant="outlined"
 									component="a"
-									href="src/downloads/6_tipos_de_greenwashing.pdf"
+									href="public/downloads/6_tipos_de_greenwashing.pdf"
 									download
 									size="small"
 									sx={{
@@ -148,7 +153,7 @@ export default function EducadoresLayout() {
 								<Button
 									variant="outlined"
 									component="a"
-									href="src/downloads/ficha_de_analise_de_propaganda.pdf"
+									href="public/downloads/ficha_de_analise_de_propaganda.pdf"
 									download
 									size="small"
 									sx={{
