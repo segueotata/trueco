@@ -2,14 +2,17 @@ import { Box, Button, Paper, Typography } from "@mui/material";
 import ParallaxSection from "../components/ParallaxSection";
 // import SectionImage from "../components/SectionImage";
 
-import truecoLogo from "../../public/assets/trueco-logo.png";
+// import da logo da Trueco
+import truecoLogo from "/assets/trueco-logo.png";
+
 import Informativos from "../components/Informativos";
 import Footer from "../components/Footer";
+import Mensagem from "../components/Mensagem";
 
 export default function Home() {
 	return (
 		<>
-			<ParallaxSection image="public/assets/bgs/1.jpg" height="30em">
+			<ParallaxSection image="/assets/bgs/1.jpg" height="30em">
 				<Paper
 					elevation={4}
 					sx={{
@@ -95,6 +98,9 @@ export default function Home() {
 			{/* TODOS OS TÓPICOS ESTÃO DENTRO DESSA FUNÇÃO:: */}
 			<Informativos></Informativos>
 
+			{/* MENSAGEM INFORMATIVA QUE DIZ SOBRE O PROJETO TER SIDO DESENVOLVIDO POR UNIVERSITÁRIOS */}
+			<Mensagem></Mensagem>
+
 			{/* INFORMAÇÕES SOBRE A "EMPRESA" E DISPONIBILIZAÇÃO DO ARTIGO PARA DOWNLOAD */}
 			<Paper
 				elevation={4}
@@ -104,7 +110,7 @@ export default function Home() {
 					padding: "1em",
 					width: { xs: "100vp", md: "50%" },
 					mx: { xs: "1em", md: "auto" },
-					my: 15,
+					my: 5,
 				}}
 			>
 				<Typography
@@ -170,7 +176,7 @@ export default function Home() {
 			</Paper>
 
 			{/* FOOTER DA PÁGINA PRINCIPAL */}
-			<ParallaxSection image="public/assets/bgs/4.jpg" height="auto">
+			<ParallaxSection image="/assets/bgs/4.jpg" height="auto">
 				<Footer></Footer>
 			</ParallaxSection>
 		</>

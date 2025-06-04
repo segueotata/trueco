@@ -101,7 +101,7 @@ export default function EducadoresLayout() {
 								<Button
 									variant="outlined"
 									component="a"
-									href="public/downloads/cartilha_consumidor_sustentavel.pdf"
+									href="/downloads/cartilha_consumidor_sustentavel.pdf"
 									download
 									size="small"
 									sx={{
@@ -127,7 +127,7 @@ export default function EducadoresLayout() {
 								<Button
 									variant="outlined"
 									component="a"
-									href="public/downloads/6_tipos_de_greenwashing.pdf"
+									href="/downloads/6_tipos_de_greenwashing.pdf"
 									download
 									size="small"
 									sx={{
@@ -153,7 +153,7 @@ export default function EducadoresLayout() {
 								<Button
 									variant="outlined"
 									component="a"
-									href="public/downloads/ficha_de_analise_de_propaganda.pdf"
+									href="/downloads/ficha_de_analise_de_propaganda.pdf"
 									download
 									size="small"
 									sx={{
