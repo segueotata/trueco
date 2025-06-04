@@ -169,6 +169,7 @@ export default function Home() {
 						component="a"
 						href="*** COLOCAR LINK DO ARQUIVO AQUI QUANDO A ISADORA MANDAR ***"
 						download
+						disabled
 					>
 						📥 Baixar Artigo
 					</Button>
