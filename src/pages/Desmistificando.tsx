@@ -15,13 +15,9 @@ import {
 	TableHead,
 	TableRow,
 	Paper,
-	useTheme,
-	useMediaQuery,
 } from "@mui/material";
 
 const Desmistificando: React.FC = () => {
-	const theme = useTheme();
-	const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
 	const vagueTerms = [
 		{
@@ -105,7 +101,7 @@ const Desmistificando: React.FC = () => {
 								marginBottom: "1em",
 							}}
 						>
-							🟨1. O que realmente significa “sustentável”?
+							🟨 1. O que realmente significa “sustentável”?
 						</Typography>
 						<List dense>
 							<ListItem disablePadding>

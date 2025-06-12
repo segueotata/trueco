@@ -17,13 +17,9 @@ import {
 	TableHead,
 	TableRow,
 	Paper,
-	useTheme,
-	useMediaQuery,
 } from "@mui/material";
 
 const FerramentasUteis: React.FC = () => {
-	const theme = useTheme();
-	const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
 	const sites = [
 		{
@@ -268,14 +264,14 @@ const FerramentasUteis: React.FC = () => {
 								marginBottom: "1em",
 							}}
 						>
-							🧠Dica prática:
+							🧠 Dica prática:
 						</Typography>
 						<Typography variant="body1" paragraph>
 							Desconfie de selos bonitos demais. Se não encontrar
 							o nome do órgão certificador, pesquise.
 						</Typography>
 						<Typography variant="body1">
-							🔍Use a pesquisa reversa de imagens do Google para
+							🔍 Use a pesquisa reversa de imagens do Google para
 							verificar se o selo realmente existe.
 						</Typography>
 					</CardContent>
