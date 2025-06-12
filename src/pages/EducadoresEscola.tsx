@@ -35,7 +35,12 @@ export default function EducadoresLayout() {
 			<Box sx={{ mb: 4 }}>
 				<Card elevation={4}>
 					<CardContent>
-						<Typography variant="h5" gutterBottom>
+						<Typography
+							variant="h5"
+							sx={{
+								marginBottom: "1em",
+							}}
+						>
 							📚 Plano de Aula: “Consumidor Sustentável”
 						</Typography>
 						<Typography>
@@ -78,8 +83,13 @@ export default function EducadoresLayout() {
 			<Box sx={{ mb: 4 }}>
 				<Card elevation={4}>
 					<CardContent>
-						<Typography variant="h5" gutterBottom>
-							📝 Materiais para baixar (em PDF):
+						<Typography
+							variant="h5"
+							sx={{
+								marginBottom: "1em",
+							}}
+						>
+							📝 Materiais para baixar (PDF):
 						</Typography>
 						<Box
 							sx={{

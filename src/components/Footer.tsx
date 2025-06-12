@@ -14,6 +14,12 @@ const membros = [
 		imagem: "/assets/pics/braz.jpg",
 	},
 	{
+		nome: "Braz Magri",
+		universidade: "Universidade Tuiuti do Paraná",
+		curso: "Desenvolvimento de Sistemas",
+		imagem: "/assets/pics/braz.jpg",
+	},
+	{
 		nome: "Hellen Ferreira",
 		universidade: "Gran Faculdade",
 		curso: "Direito",
@@ -37,6 +43,7 @@ const membros = [
 		curso: "Psicologia",
 		imagem: "/assets/pics/julya.jpg",
 	},
+	
 ].sort((a, b) => a.nome.localeCompare(b.nome));
 
 export default function Footer() {

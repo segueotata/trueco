@@ -6,6 +6,8 @@ import AuthForm from "./pages/Autenticacao";
 import PrivateRoute from "./components/Guardian";
 import Dashboard from "./pages/Dashboard";
 import EducadoresLayout from "./pages/EducadoresEscola";
+import FerramentasUteis from "./pages/Ferramentas";
+import Desmistificando from "./pages/Desmistificando";
 
 function App() {
 	return (
@@ -19,6 +21,8 @@ function App() {
 					/>
 					<Route path="/quiz" element={<Quiz />} />
 					<Route path="/login" element={<AuthForm />} />
+					<Route path="/ferramentasuteis" element={<FerramentasUteis />} />
+					<Route path="/desmistificando" element={<Desmistificando />} />
 					<Route
 						path="/dashboard"
 						element={
